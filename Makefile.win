@@ -1,0 +1,46 @@
+# Project: 大作业C++
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o choice.o set.o Set_.o some.o relation.o choice2.o
+LINKOBJ  = main.o choice.o set.o Set_.o some.o relation.o choice2.o
+LIBS     = -L"E:/Dev-Cpp/MinGW64/lib" -L"E:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"E:/Dev-Cpp/MinGW64/include" -I"E:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/Dev-Cpp/MinGW64/include" -I"E:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 大作业C++.exe
+CXXFLAGS = $(CXXINCS) -traditional-cpp
+CFLAGS   = $(INCS) -traditional-cpp
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+choice.o: choice.cpp
+	$(CPP) -c choice.cpp -o choice.o $(CXXFLAGS)
+
+set.o: set.cpp
+	$(CPP) -c set.cpp -o set.o $(CXXFLAGS)
+
+Set_.o: Set_.cpp
+	$(CPP) -c Set_.cpp -o Set_.o $(CXXFLAGS)
+
+some.o: some.cpp
+	$(CPP) -c some.cpp -o some.o $(CXXFLAGS)
+
+relation.o: relation.cpp
+	$(CPP) -c relation.cpp -o relation.o $(CXXFLAGS)
+
+choice2.o: choice2.cpp
+	$(CPP) -c choice2.cpp -o choice2.o $(CXXFLAGS)
